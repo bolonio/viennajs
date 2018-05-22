@@ -1,0 +1,62 @@
+{
+  "name": "viennjs",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "co": "sui-mono commit",
+    "start": "sui-bundler dev",
+    "lint": "sui-lint js --fix --ignore-pattern server && sui-lint sass",
+    "ssr": "sui-bundler build -C && sui-ssr build -C && node ./server",
+    "archive": "npm run ssr && sui-ssr archive -C"
+  },
+  "keywords": [],
+  "author": "Adrian Bolonio <adrian.bolonio@willhaben.at>",
+  "license": "ISC",
+  "dependencies": {
+    "@s-ui/component-peer-dependencies": "1.5.0",
+    "@s-ui/hoc": "1.5.0",
+    "@s-ui/react-initial-props": "1",
+    "@s-ui/ssr": "1.7.0",
+    "@schibstedspain/sui-atom-button": "^1.10.0",
+    "isomorphic-fetch": "2.2.1"
+  },
+  "devDependencies": {
+    "@s-ui/bundler": "3",
+    "@s-ui/lint": "2",
+    "@s-ui/mono": "1",
+    "@s-ui/precommit": "2",
+    "husky": "0.13.4"
+  },
+  "sui-bundler": {
+    "offline": {
+      "whitelist": [
+        "::all::"
+      ],
+      "runtime": [
+        {
+          "urlPattern": "jsonplaceholder\\.typicode\\.com",
+          "handler": "networkFirst"
+        }
+      ]
+    },
+    "vendor": [
+      "react",
+      "react-dom",
+      "react-router",
+      "isomorphic-fetch"
+    ]
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": "@s-ui/mono/src/types"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@s-ui/lint/eslintrc.js"
+    ]
+  },
+  "sasslintConfig": "./node_modules/@s-ui/lint/sass-lint.yml"
+}
