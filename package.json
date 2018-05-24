@@ -9,7 +9,7 @@
     "start": "sui-bundler dev",
     "lint": "sui-lint js --fix --ignore-pattern server && sui-lint sass",
     "ssr": "sui-bundler build -C && sui-ssr build -C && node ./server",
-    "archive": "npm run ssr && sui-ssr archive -C"
+    "archive": "sui-bundler build -C && sui-ssr build -C && sui-ssr archive -C"
   },
   "keywords": [],
   "author": "Adrian Bolonio <adrian.bolonio@willhaben.at>",
