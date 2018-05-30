@@ -8,8 +8,9 @@
     "co": "sui-mono commit",
     "start": "sui-bundler dev",
     "lint": "sui-lint js --fix --ignore-pattern server && sui-lint sass",
-    "ssr": "sui-bundler build -C && sui-ssr build -C && node ./server",
-    "archive": "sui-bundler build -C && sui-ssr build -C && sui-ssr archive -C"
+    "ssr-build": "sui-bundler build -C && sui-ssr build -C",
+    "ssr": "ssr-build && node ./server",
+    "archive": "ssr-build && sui-ssr archive -C"
   },
   "keywords": [],
   "author": "Adrian Bolonio <adrian.bolonio@willhaben.at>",
