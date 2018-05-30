@@ -31,17 +31,6 @@
     "husky": "0.13.4"
   },
   "sui-bundler": {
-    "offline": {
-      "whitelist": [
-        "::all::"
-      ],
-      "runtime": [
-        {
-          "urlPattern": "jsonplaceholder\\.typicode\\.com",
-          "handler": "networkFirst"
-        }
-      ]
-    },
     "vendor": [
       "react",
       "react-dom",

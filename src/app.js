@@ -8,8 +8,6 @@ import browserHistory from 'react-router/lib/browserHistory'
 import contextFactory from './contextFactory'
 import withContext from '@s-ui/hoc/lib/withContext'
 
-import {register} from '@s-ui/bundler/registerServiceWorker'
-
 import './styles/index.scss'
 
 contextFactory().then(context => {
@@ -19,8 +17,3 @@ contextFactory().then(context => {
     document.getElementById('app')
   )
 })
-
-register({
-  first: () => window.alert('Content is cached for offline use.'),
-  renovate: () => window.alert('New content is available; please refresh.')
-})()
