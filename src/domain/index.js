@@ -1,13 +1,13 @@
-import GetMarkupUseCase from './Markup/UseCases/GetMarkup'
+import GetSellerProfile from './Willhaben/UseCases/GetSellerProfile'
 
 const useCases = {
-  getMarkup: GetMarkupUseCase
+  getSellerProfile: GetSellerProfile
 }
 
-class Markup {
+class Willhaben {
   get (key) {
     return new useCases[key]()
   }
 }
 
-export default Markup
+export default Willhaben

@@ -1,4 +1,4 @@
-import Markup from './domain'
-const markup = new Markup()
+import Willhaben from './domain'
+const willhaben = new Willhaben()
 
-export default async () => ({domain: markup})
+export default async () => ({domain: willhaben})
